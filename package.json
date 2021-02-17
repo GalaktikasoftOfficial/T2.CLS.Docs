@@ -1,0 +1,16 @@
+{
+  "name": "T2.CLS.Docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GalaktikasoftOfficial/T2.CLS.Docs.git",
+  "author": "komeyko <komeiko.alexandr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.1"
+  },
+  "scripts": {
+	"docs:dev": "vuepress dev docs",
+	"docs:build": "vuepress build docs"
+	}
+}
+
