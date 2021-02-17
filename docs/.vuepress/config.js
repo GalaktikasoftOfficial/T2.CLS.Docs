@@ -50,7 +50,98 @@ module.exports = {
 			//path: '/logging/',      // optional, link of the title, which should be an absolute path and must exist
 			collapsable: true, // optional, defaults to true
 			sidebarDepth: 0,    // optional, defaults to 1			
-			children: [					
+			children: [				
+				{
+					title: 'Введение', 
+					path: '/Introduction',
+					collapsable: true,
+					children:[
+						'Introduction/components',
+						'Introduction/terms',
+						'Introduction/performance',
+						'Introduction/scheme',
+						'Introduction/use_variants'
+					]
+				},
+				{
+					title: 'Начало работы', 
+					path: '/getting_started',
+					collapsable: true,	
+					children: [
+						'/getting_started/system_requirements',
+						{
+							title: 'Развёртывание', 
+							path: '/getting_started/deployment',
+							collapsable: true,	
+							children: [	
+								'/getting_started/deployment/clickhouse',
+								'/getting_started/deployment/storageservice',
+								{
+									title: 'Log Transport',
+									path: '/getting_started/deployment/transport',
+									callapsable: true,
+									children : [
+										'/getting_started/deployment/transport/iis',
+										'/getting_started/deployment/transport/nomad'
+									]									
+								},
+								{
+									title: 'Log Viewer',
+									path: '/getting_started/deployment/logviewer',
+									callapsable: true,
+									children : [
+										'/getting_started/deployment/logviewer/iis',
+										'/getting_started/deployment/logviewer/nomad'
+									]									
+								}																
+							]
+						},
+						{
+							title: 'Конфигурация сервисов',
+							path: '/getting_started/configuration/',
+							callapsable: true,
+							children : [
+								 '/getting_started/configuration/storedservice',
+								 '/getting_started/configuration/transport',
+								 '/getting_started/configuration/xumapi',
+								 '/getting_started/configuration/xumhost'
+							
+							]									
+						},
+						{
+							title: 'Первый запуск',
+							path: '/getting_started/first_start/',
+							callapsable: true,
+							children : [
+								 '/getting_started/first_start/start_logviewer'
+							]		
+						}
+					]
+				},
+				{
+					title: 'База знаний',
+					path: '/knowledge_base',
+					collapsable: true,
+					children: [
+						{
+							title: 'Linux',
+							callapsable: true,
+							children: [
+								'/knowledge_base/linux_dotnet',
+								'/knowledge_base/linux_proxy'
+							]	
+						},
+						{
+							title: 'MS SQL',
+							callapsable: true,
+							children: [
+								'/knowledge_base/mssql_add_service_user'
+							]	
+						}
+						
+					]
+				}
+					
 			]
 		}		
     ]
