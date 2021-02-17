@@ -1,0 +1,26 @@
+name: build and publish log documents
+on: 
+    push:
+        branches: 
+        - master
+    
+    pull_request:
+        branches: 
+        - master
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+ build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@1.0.1
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_LINK: https://github.com/GalaktikasoftOfficial/T2.CLS.Docs.git
+        TARGET_BRANCH: gh_pages
+        BUILD_SCRIPT: yarn && yarn docs:build
+        BUILD_DIR: docs/.vuepress/dist/
